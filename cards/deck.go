@@ -2,6 +2,9 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
+	"os"
+	"strings"
 )
 
 type deck []string
@@ -17,7 +20,6 @@ func newDeck() deck {
 			cards = append(cards, suit+" of "+value)
 		}
 	}
-
 	return cards
 }
 
@@ -29,4 +31,26 @@ func (d deck) printCards() {
 
 func deal(d deck, handSize int) (deck, deck) {
 	return d[:handSize], d[handSize:]
+}
+
+func (d deck) deckToString() string {
+	s := []string(d)
+	return strings.Join(s, ",")
+}
+
+func (d deck) saveToFile(fileName string) error {
+	return ioutil.WriteFile(fileName, []byte(d.deckToString()), 0666)
+}
+
+func readDeckFromFile(fileName string) deck {
+
+	bs, err := ioutil.ReadFile(fileName)
+	if err != nil {
+		fmt.Println("Error", err)
+		os.Exit(1)
+	}
+
+	s := string(bs)
+	ss := strings.Split(s, ",")
+	return deck(ss)
 }

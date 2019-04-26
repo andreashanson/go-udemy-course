@@ -54,3 +54,7 @@ func readDeckFromFile(fileName string) deck {
 	ss := strings.Split(s, ",")
 	return deck(ss)
 }
+
+func (d deck) shuffle() {
+
+}

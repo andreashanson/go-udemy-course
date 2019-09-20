@@ -14,7 +14,11 @@ func main() {
 	colors3 := map[string]string{
 		"red": "#ff0000",
 		"green": "#745777",
+		"white": "#FFFFFF",
 	}
+
+
+	printMap(colors3)
 
 	fmt.Println(colors)
 	fmt.Println(colors2)
@@ -41,3 +45,10 @@ func main() {
 	fmt.Println(names)
 
 }
+
+	func printMap(m map[string]string) {
+		for key, value := range m {
+			fmt.Println("key: " + key)
+			fmt.Println("value: " + value)
+		}
+	}

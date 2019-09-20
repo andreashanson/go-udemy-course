@@ -55,3 +55,29 @@ A Slice is a list that can grow or shrink
 # Slice
  - Add card to slice
   slice = append(cards, "Six of Spades")
+
+# Pointers
+
+func (pointerToPerson *person) updateName() {
+    *pointerToPerson
+}
+
+Star in front of a type we are looking for a type of pointer to a person
+
+But a star in front of an actual pointer we are looking for the value of that pointer.
+
+Vi behöver inte bry oss om pekare på referens typer.
+
+Vi behöver bry oss om pekare på värde typer.
+
+En slice är en referens typ för den innehåller en referens till en underliggande lista of records.
+
+När vi skall passa in argument till funktioner så försöker vi använda pekaren till värdet för att det inte skall bli fel.
+
+# Maps
+
+This means that we are declaring a map colors.
+And we say that all of the keys needs to be of type string.
+And all of its values also needs to be of type string.
+
+colors := map[string]string{}

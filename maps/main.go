@@ -17,21 +17,19 @@ func main() {
 		"white": "#FFFFFF",
 	}
 
-
+	printMap(colors)
+	printMap(colors2)
 	printMap(colors3)
 
-	fmt.Println(colors)
-	fmt.Println(colors2)
-	fmt.Println(colors3)
-
 	//colors["black"] = "#999999"
-	colors2["black"] = "#999999"
-	//colors3["blue"] = "#444444"
+	// printMap(colors)
 	
-	fmt.Println(colors)
-	fmt.Println(colors2)
-	fmt.Println(colors3)
+	colors2["black"] = "#999999"
+	printMap(colors2)
 
+	colors3["blue"] = "#444444"
+	printMap(colors3)
+	
 	// This will delete the key "black from map colors2"
 	delete(colors2, "black")
 	fmt.Println(colors2)
@@ -47,6 +45,7 @@ func main() {
 }
 
 	func printMap(m map[string]string) {
+		fmt.Println("Printing map of strings")
 		for key, value := range m {
 			fmt.Println("key: " + key)
 			fmt.Println("value: " + value)

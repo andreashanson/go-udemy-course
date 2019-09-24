@@ -2,7 +2,7 @@ package main
 
 import ("fmt")
 
-type area interface {
+type shape interface {
 	getArea() float64
 }
 
@@ -25,8 +25,8 @@ func main() {
 
 }
 
-func printArea(a area) {
-	fmt.Println(a.getArea())
+func printArea(s shape) {
+	fmt.Println(s.getArea())
 }
 
 func (s square) getArea() float64 {
